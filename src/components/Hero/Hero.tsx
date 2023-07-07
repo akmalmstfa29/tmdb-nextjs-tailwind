@@ -17,7 +17,6 @@ type Props = {
 
 
 const Hero = ({ imgUrl, title, text, id, rating }: Props) => {
-
   return (
     <div className='relative'>
 
@@ -46,12 +45,12 @@ const Hero = ({ imgUrl, title, text, id, rating }: Props) => {
                 {title}
               </h1>
               <div className='my-4 flex items-center gap-4'>
-                <div className='flex items-center gap-2 border font-bold rounded bg-white text-black border-neutral-300 py-2 px-5'>
+                <div className='flex items-center gap-2 border font-bold rounded bg-white text-black py-2 px-5'>
                   <RiStarFill />{rating.toFixed(2)}
                 </div>
                 <Link href={`/movies/${id}`}>
                   <button
-                    className='rounded text-white py-2 px-5 hover:text-neutral-300 bg-neutral-500/[.03] duration-200'
+                    className='rounded text-white py-2 px-5 hover:text-neutral-300 bg-neutral-500/50 duration-200'
                   >
                     See Details
                   </button>

@@ -1,7 +1,8 @@
 import { basicFetch } from '@/api';
-import { Carousel, CarouselCard } from '@/components';
+import { Carousel, CarouselCard, Modal } from '@/components';
 import Hero from '@/components/Hero/Hero';
 import { BACKDROP_SIZE, IMAGE_BASE_URL, genreUrl, movieUrl } from '@/config';
+import { useModal } from '@/hooks';
 import { Featured, Movie, Movies, SelectMovie } from '@/types/Movie';
 import { GetStaticProps, NextPage } from 'next';
 
@@ -15,6 +16,8 @@ const CarouselProps = {
 }
 
 const Home: NextPage<HomeProps> = ({ featuredMovie, actionGenre }) => {
+  const { handleToggle, isVisible, setIsVisible, activeMovie } = useModal();
+
   return (
     <>
       <Hero
@@ -31,9 +34,17 @@ const Home: NextPage<HomeProps> = ({ featuredMovie, actionGenre }) => {
       <div className='relative pt-10 bg-brand-900 z-30'>
         <Carousel {...CarouselProps} title='Action Movies' href="/movies/genre/28" hasLink={true}> 
           {actionGenre.map((actionMovie) => (
-            <CarouselCard key={actionMovie.id} movie={actionMovie} />
+            <CarouselCard key={actionMovie.id} movie={actionMovie} onClick={() => handleToggle(actionMovie)} />
           ))}
-          </Carousel>
+        </Carousel>
+
+        {isVisible && (
+          <Modal
+            isVisible={isVisible}
+            onClose={() => setIsVisible(!isVisible)}
+            movie={activeMovie}
+          />
+        )}
       </div>
     </>
   )
