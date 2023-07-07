@@ -3,6 +3,7 @@ import Link from 'next/link';
 // Helpers
 import { truncateString } from '@/utils/helpers';
 import { RiStarFill } from 'react-icons/ri'
+import { memo } from 'react';
 
 type Props = {
   imgUrl: string;
@@ -67,4 +68,4 @@ const Hero = ({ imgUrl, title, text, id, rating }: Props) => {
     </div>
   )
 }
-export default Hero
+export default memo(Hero)
