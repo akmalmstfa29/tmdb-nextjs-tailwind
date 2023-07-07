@@ -7,6 +7,7 @@ export const API_KEY: string | undefined = process.env.TMDB_API_KEY;
 // For ID based searches
 export const movieUrl = (id?: string) => `${API_URL}movie/${id}?api_key=${API_KEY}`;
 export const genreUrl = (id?: string) => `${API_URL}discover/movie?api_key=${API_KEY}&language=en-US&sort_by=vote_count.desc&include_adult=false&include_video=false&with_genres=${id}`
+export const creditsUrl = (id?: string) => `${API_URL}movie/${id}/credits?api_key=${API_KEY}`;
 
 // Images
 export const IMAGE_BASE_URL: string = 'http://image.tmdb.org/t/p/';

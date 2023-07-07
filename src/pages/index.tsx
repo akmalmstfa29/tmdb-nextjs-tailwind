@@ -28,7 +28,7 @@ const Home: NextPage<HomeProps> = ({ featuredMovie, actionGenre,comedyGenre,
       <Hero
         imgUrl={featuredMovie.backdropPath
           ? IMAGE_BASE_URL + BACKDROP_SIZE + featuredMovie.backdropPath
-          : "/images/baby-yoda-32.png"}
+          : "/images/missing-image.png"}
         title={featuredMovie.title}
         text={featuredMovie.overview}
         tagline={featuredMovie.tagline}
