@@ -2,26 +2,175 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply bg-brand-900;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer utilities {
+  /* Text Shadows */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.10);
+  }
+
+  .text-shadow-md {
+    text-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 15px 30px rgba(0,0,0,0.11), 0 5px 15px rgba(0,0,0,0.08);
+  }
+
+  .text-shadow-none {
+    text-shadow: none;
+  }
+
+  .scroll-row-transition {
+    transition: scroll 0.2s ease 0s;
+  }
+  /* Slider Buttons */
+  .slider-btn-padding {
+    padding: 4.28571% 0px;
+  }
+
+  /* white Text Shadows */
+  .text-white-shadow {
+    color: hsl(189, 33%, 96%);
+    text-shadow:
+      0 0 8px hsl(180, 5%, 92%),
+      0 0 2.5vmin hsl(180, 5%, 92%),
+      0 0 5vmin hsl(180, 5%, 92%),
+      0 0 10vmin hsl(180, 5%, 92%),
+      0 0 15vmin hsl(180, 5%, 92%)    
+  }
+  .slate-shadow {
+    box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 10px rgb(148 163 184), 0 0 16px rgb(148 163 184),
+    0 0 18px rgb(148 163 184);
+  }
+
+  .slate-shadow-soft {
+    box-shadow: 0 0 1px #fff, 0 0 8px rgb(148 163 184), 0 0 12px rgb(148 163 184),
+    0 0 16px rgb(148 163 184);
+  }
+
+  .slate-shadow-soft-darker {
+    box-shadow: 0 0 1px rgb(148 163 184), 0 0 8px #0097a7, 0 0 12px #0097a7,
+    0 0 16px #0097a7;
+  }
+
+  .slate-shadow-soft-inset {
+    box-shadow: inset 0 0 1px #fff, 0 0 8px rgb(148 163 184), inset 0 0 12px rgb(148 163 184), inset
+    0 0 16px rgb(148 163 184);
+  }
+  
+  /* Special FX */
+  .oval-shadow {
+    border-radius: 50%;
+  }
+
+  /* Overlays */
+  .gradient-transparency {
+    background-image: linear-gradient(180deg, rgba(0,0,0,.7) 10%, transparent);
+  }
+
+  .gradient-overlay {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(23, 24, 26, 0) 0%,
+      rgba(16, 16, 18, 1) 100%
+    );
+  }
+
+  /* Neumorphism */
+  .shadow-dark-1 {
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2), inset -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  }
+
+  /* Glassmorphism UI Elements */
+  .glass-container-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+  .glass-container-light {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  /* Workaround to disable unwanted scrolling on mobile and browsers simulating mobile screens */
+  /* e.preventDefault() doesn't always work / is ignored */
+  .lock-screen {
+    touch-action: pan-y pinch-zoom;
+  }
+
+  /* Carousel */
+  .carousel-content {
+    display: flex;
+    column-gap: 1rem;
+    padding: 0 0.5rem;
+    margin: auto 0.5rem;
+    transition: all 250ms linear;
+    -ms-overflow-style: none;  /* hide scrollbar in IE and Edge */
+    scrollbar-width: none;  /* hide scrollbar in Firefox */
+  }
+  
+  /* hide scrollbar in webkit browser */
+  .carousel-content::-webkit-scrollbar, .carousel-content::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .carousel-content > * {
+    width: 100%;
+    flex-shrink: 0;
+    flex-grow: 1;
+  }
+  
+  .carousel-content.show-2 > * {
+    width: 50%;
+  }
+  
+  .carousel-content.show-3 > * {
+    width: calc(100% / 3);
+  }
+
+  .carousel-content.show-4 > * {
+    width: calc(100% / 4);
+  }
+
+  .carousel-content.show-5 > * {
+    width: calc(100% / 5);
+  }
+
+  .carousel-content.show-6 > * {
+    width: calc(100% / 6);
+  }
+
+  .carousel-content.show-7 > * {
+    width: calc(100% / 7);
+  }
+  
+  .left-arrow, .right-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background-color: white;
+    border: 1px solid #ddd;
+  }
+  
+  .left-arrow {
+    left: 24px;
+  }
+  
+  .right-arrow {
+    right: 24px;
+  }
+  
 }
