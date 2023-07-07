@@ -24,8 +24,7 @@ const Header = () => {
   }, [scroll])
 
   return (
-    <div className={`flex flex-col md:flex-row gap-2 items-center justify-between p-4 z-[100] w-full fixed duration-1000 top-0 ${hasScrolled ? 'bg-brand-900' : 'bg-transparent gradient-transparency'}`}>
-
+    <div className={`flex flex-col md:flex-row gap-2 items-center justify-center md:justify-between items-center p-4 z-[100] w-full fixed duration-1000 top-0 ${hasScrolled ? 'bg-brand-900' : 'bg-transparent gradient-transparency'}`}>
       <Link href='/'>
         <Image width='100' height='20' src='/images/tmdb.svg' alt='tmdb logo' />
       </Link>

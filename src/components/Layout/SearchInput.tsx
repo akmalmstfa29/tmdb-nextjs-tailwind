@@ -35,7 +35,7 @@ const SearchInput = () => {
   }
 
   return (
-    <div className='relative'>
+    <div className='relative mt-2 md:mt-0'>
       <form onSubmit={handleSubmit}>
         <label className="button searchbutton" htmlFor="searchright">
           <span className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"><RiSearchLine className="w-5 h-5 text-slate-400" /></span>

@@ -49,7 +49,6 @@ const Movie: NextPage<TProps> = ({ movie, cast, directors }) => {
               imgUrl={actor.profile_path ? IMAGE_BASE_URL + POSTER_SIZE + actor.profile_path : '/images/missing-image.png'}
               title={actor.name}
               subtitle={actor.character}
-              routeUrl='/actor'
             />
         ))}
       </GridContainer>

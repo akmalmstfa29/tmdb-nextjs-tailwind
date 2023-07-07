@@ -5,7 +5,7 @@ import { RiGithubFill } from "react-icons/ri"
 const Footer = () => {
 
   return (
-    <div className="relative w-full flex items-center justify-between text-slate-500 font-bold mb-11 px-20 pt-6 bg-brand-900">
+    <div className="relative w-full flex items-center justify-between text-slate-500 font-bold pb-6 px-20 pt-6">
       <a className='text-4xl' href='https://github.com/akmalmstfa' target="_blank" rel="noreferrer">
         <RiGithubFill />
       </a>
