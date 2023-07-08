@@ -51,7 +51,7 @@ const MoviesByGenre: NextPage<TProps> = ({ genres }) => {
   }, [genres, gid])
   
   return (
-    <div className='pt-16 md: pt-10'>
+    <div className='grow pt-16 md: pt-10'>
       <GridContainer title={`${title} Movies`}>
         {isSuccess && data && data.pages
           ? data.pages.map(page => 

@@ -21,7 +21,7 @@ type TProps = {
 const Movie: NextPage<TProps> = ({ movie, cast, directors }) => {
 
   return (
-    <main>
+    <main className='grow'>
       <MovieDetails
         rating={movie.vote_average}
         year={movie.release_date.split('-')[0]}
