@@ -10,7 +10,7 @@ const Footer = () => {
         <RiGithubFill />
       </a>
       <a href='https://www.themoviedb.org/' target="_blank" rel="noreferrer">
-        <Image width='100' height='20' src='/images/tmdb.svg' alt='tmdb logo' />
+        <Image width='100' height='20' src='/assets/images/tmdb.svg' alt='tmdb logo' />
       </a>
     </div>
   )

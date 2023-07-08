@@ -15,3 +15,7 @@ export const basicFetch = async <T>(endpoint: string): Promise<T> => {
 export const getGenres = async (genre = '', page = 1): Promise<Movies> => {
   return await basicFetch<Movies>(`/api/movies?genre=${genre}&page=${page}`)
 }
+
+export const searchMovies = async (search = '', page = 1): Promise<Movies> => {
+  return await basicFetch<Movies>(`/api/search?search=${search}&page=${page}`)
+}

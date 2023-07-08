@@ -9,11 +9,11 @@ type Props = {
 const Layout = ({ children, ...props }: Props) => {
 
   return (
-    <>
+    <div className='flex flex-col min-h-screen'>
       <Header />
         {children}
       <Footer />
-    </>
+    </div>
   )
 }
 export default Layout

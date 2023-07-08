@@ -24,9 +24,10 @@ const SearchInput = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    // do action search here
-
-    setInputVal('')
+    navigate.push({
+      pathname: '/movies/search/',
+      query: { name: `${inputVal}` }
+    })
   }
 
   const handleInputReset = (e: React.MouseEvent<HTMLButtonElement>) => {

@@ -30,7 +30,7 @@ const Movie: NextPage<TProps> = ({ movie, cast, directors }) => {
           ? IMAGE_BASE_URL + BACKDROP_SIZE + movie.backdrop_path
           : movie.poster_path
             ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-            : '/images/missing-image.png'}
+            : '/assets/images/missing-image.png'}
 
         title={movie.original_title}
         tagline={movie.tagline}
@@ -46,7 +46,7 @@ const Movie: NextPage<TProps> = ({ movie, cast, directors }) => {
             <GridCard
               key={actor.id}
               itemId={actor.id}
-              imgUrl={actor.profile_path ? IMAGE_BASE_URL + POSTER_SIZE + actor.profile_path : '/images/missing-image.png'}
+              imgUrl={actor.profile_path ? IMAGE_BASE_URL + POSTER_SIZE + actor.profile_path : '/assets/images/missing-image.png'}
               title={actor.name}
               subtitle={actor.character}
             />

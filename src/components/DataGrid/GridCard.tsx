@@ -16,7 +16,7 @@ const GridCard = ({ imgUrl, title, subtitle, itemId, routeUrl }: Props) => {
     () => (
       <Image
         placeholder='blur'
-        blurDataURL='/images/placeholder.png'
+        blurDataURL='/assets/images/placeholder.png'
         width={375}
         height={563}
         className='rounded opacity-70'
@@ -33,7 +33,7 @@ const GridCard = ({ imgUrl, title, subtitle, itemId, routeUrl }: Props) => {
       className='rounded p-2 bg-black border border-slate-400 cursor-pointer hover:neon-shadow hover:opacity-80 duration-300 hover:scale-105'
     >
       {renderLink ? (
-        <Link href={`/movies${routeUrl}/${itemId}`} passHref>
+        <Link href={`/movies${routeUrl}${itemId}`} passHref>
           {image}
         </Link>
       ) : (

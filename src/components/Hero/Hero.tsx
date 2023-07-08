@@ -29,7 +29,7 @@ const Hero = ({ imgUrl, title, text, id, rating }: Props) => {
         alt={title}
         className='absolute inset-0 w-full h-full object-cover -z-10 animate-fadeIn'
         placeholder='blur'
-        blurDataURL='/images/placeholder.png'
+        blurDataURL='/assets/images/placeholder.png'
       />
       
       {/* Overlay */}

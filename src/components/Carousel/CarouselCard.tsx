@@ -19,12 +19,12 @@ const CarouselCard = ({movie, onClick}: TCardProps) => {
     >
       <Image
         placeholder='blur'
-        blurDataURL='/images/placeholder.png'
+        blurDataURL='/assets/images/placeholder.png'
         width={342}
         height={513}
         src={movie.posterPath
           ? IMAGE_BASE_URL + THUMB_SIZE + movie.posterPath
-          : '/images/missing-image.png' }
+          : '/assets/images/missing-image.png' }
         alt='movie'
         priority={true}
         className='rounded-md bg-brand-900 cursor-pointer'

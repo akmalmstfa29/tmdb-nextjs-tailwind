@@ -51,7 +51,7 @@ const MoviesByGenre: NextPage<TProps> = ({ genres }) => {
   }, [genres, gid])
   
   return (
-    <div className='pt-10'>
+    <div className='pt-16 md: pt-10'>
       <GridContainer title={`${title} Movies`}>
         {isSuccess && data && data.pages
           ? data.pages.map(page => 
@@ -60,7 +60,7 @@ const MoviesByGenre: NextPage<TProps> = ({ genres }) => {
                 key={movie.id}
                 itemId={movie.id}
                 imgUrl={movie.poster_path
-                ? IMAGE_BASE_URL + THUMB_SIZE + movie.poster_path : '/images/missing-image.png'}
+                ? IMAGE_BASE_URL + THUMB_SIZE + movie.poster_path : '/assets/images/missing-image.png'}
                 title={movie.original_title}
                 subtitle={movie.belongs_to_collection}
                 routeUrl={'/'}
@@ -69,9 +69,9 @@ const MoviesByGenre: NextPage<TProps> = ({ genres }) => {
         : null}
       </GridContainer>
       <div ref={setTarget}>{isFetchingNextPage ? "Loading more..." : ""}</div>
-      {isLoading && <div className='text-cyan-400 flex items-center justify-center my-11'>Loading !</div>}
+      {isLoading && <div className='text-white flex items-center justify-center my-11'>Loading !</div>}
       {!hasNextPage && !isLoading && (
-        <div className='text-cyan-400 flex justify-center items-center my-11 mx-auto'>
+        <div className='text-white flex justify-center items-center my-11 mx-auto'>
           Congrats! You scrolled to the end of {title}. You rock! 🤘
         </div>
       )}

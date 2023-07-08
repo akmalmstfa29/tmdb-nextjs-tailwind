@@ -44,7 +44,7 @@ const MovieDetails = ({
       <Image
         priority={true}
         placeholder='blur'
-        blurDataURL='/images/placeholder.png'
+        blurDataURL='/assets/images/placeholder.png'
         objectFit='cover'
         objectPosition='center'
         layout='fill'

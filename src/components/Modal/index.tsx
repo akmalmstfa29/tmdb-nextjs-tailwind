@@ -36,12 +36,12 @@ const Modal = ({isVisible, onClose, movie }: TModalProps) => {
 
             <Image
               placeholder='blur'
-              blurDataURL='/images/placeholder.png'
+              blurDataURL='/assets/images/placeholder.png'
               width={342}
               height={192}
               layout='responsive'
               src={movie.backdropPath
-                ? IMAGE_BASE_URL + THUMB_SIZE + movie.backdropPath : '/images/kylo-sm.png'}
+                ? IMAGE_BASE_URL + THUMB_SIZE + movie.backdropPath : '/assets/images/kylo-sm.png'}
               alt='movie'
               priority={true}
               className='rounded-t-lg cursor-pointer w-full pb-6'
